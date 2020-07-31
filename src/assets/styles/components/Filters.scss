@@ -1,0 +1,30 @@
+.filter__nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: var(--secon-main);  
+}
+
+.filter__nav--category {
+  color: var(--clear);
+  font-weight: 600;  
+}
+
+.filter__nav ul{
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  padding:  5px 20px;
+  border-left: 1px solid var(--secon-main);
+}
+
+.filter__nav ul:hover{
+  background-color: var(--main-dark);
+}
+
+.filter__nav ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin: 0 10px;
+}

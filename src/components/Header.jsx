@@ -1,4 +1,8 @@
 import React from 'react';
+import '../assets/styles/components/Header.scss';
+
+import favLogo from '../assets/static/favLogo.svg';
+//import cartLogo from './assets/static/cartLogo.svg';
 
 const Header = () => (
   <header className='header__container'>
@@ -12,10 +16,10 @@ const Header = () => (
 
       <ul className='header__button'>
         <a className='header__button--fav' href='#favoritos'>
-          <img src='imgs/028-favourite.svg' alt='heart' />
+          <img src={favLogo} alt='favourite items' />
         </a>
         <a className='header__button--cart' id='cartOpenButton' href='#favoritos'>
-          <img src='imgs/044-shopping cart.svg' alt='cart' />
+          <img src='' alt='items in my cart' />
         </a>
         <a className='header__button--profile' href='log-in.html'>
           <img src='imgs/036-customer.svg' alt='customer profile' />
