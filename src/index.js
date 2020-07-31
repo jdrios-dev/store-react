@@ -1,5 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Hellow from './components/Hellow';
+import App from './containers/App';
 
-ReactDOM.render(<Hellow/>, document.getElementById('app'));
+ReactDOM.render(<App />, document.getElementById('app'));
