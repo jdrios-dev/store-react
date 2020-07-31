@@ -1,8 +1,9 @@
 import React from 'react';
 import '../assets/styles/components/Header.scss';
 
-import favLogo from '../assets/static/favLogo.svg';
-//import cartLogo from './assets/static/cartLogo.svg';
+import favLogo from '../assets/static/imgs/favLogo.svg';
+import cartLogo from '../assets/static/imgs/cartLogo.svg';
+import profileLogo from '../assets/static/imgs/profileLogo.svg';
 
 const Header = () => (
   <header className='header__container'>
@@ -19,10 +20,10 @@ const Header = () => (
           <img src={favLogo} alt='favourite items' />
         </a>
         <a className='header__button--cart' id='cartOpenButton' href='#favoritos'>
-          <img src='' alt='items in my cart' />
+          <img src={cartLogo} alt='items in my cart' />
         </a>
         <a className='header__button--profile' href='log-in.html'>
-          <img src='imgs/036-customer.svg' alt='customer profile' />
+          <img src={profileLogo} alt='customer profile' />
         </a>
       </ul>
     </div>
