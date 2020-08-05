@@ -19,3 +19,17 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+::-webkit-scrollbar {
+  background-color: var(--main-dark);
+  width: 10px;
+  padding: 2px;
+}
+
+::-webkit-scrollbar-thumb{
+  background-color: var(--secon-main);
+  opacity: 0;
+  border-radius: 5px ;
+  border: 3px solid var(--main-dark);
+}
+

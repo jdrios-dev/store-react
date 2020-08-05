@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../assets/styles/components/Login.scss';
 
 const Login = () => (
@@ -25,9 +26,9 @@ const Login = () => (
         </button>
         <p className='login__register--link'>
           I do not have an account,
-          <a href='/register'>
+          <Link to='/register'>
             Sign Up
-          </a>
+          </Link>
         </p>
         <p className='login__register--forgot'>
           I forgot my password,

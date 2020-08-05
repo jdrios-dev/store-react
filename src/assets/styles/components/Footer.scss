@@ -8,14 +8,12 @@
   bottom: 0;
 }
 
-.footer a{
-  color: var(--secon-dark);
+.footer p{
   margin: 10px 30px;
-  text-decoration: none;
+  color: var(--secon-dark);
 }
 
-.footer a:hover {
-  text-decoration: underline;
+.footer p:hover {
   font-weight: 600;
 }
 
@@ -24,11 +22,11 @@
   width: auto;
   height: 30px;
   margin: 0 20px;
-  background-color: var(--clear);
   margin-bottom: 0;
   opacity: .5;
   transition: .3s;
   border-radius: 10px 10px 0 0;
+  background-color: var(--clear);
 }
 
 .footer__span-logo:hover,

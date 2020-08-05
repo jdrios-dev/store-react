@@ -13,7 +13,7 @@ const Filters = () => (
           <input type='checkbox' name='intel' id='cpu__intel' />
         </label>
         <label htmlFor='cpu__amd'>
-          amd
+          AMD
           <input type='checkbox' name='amd' id='cpu__amd' />
         </label>
       </li>

@@ -1,6 +1,6 @@
 import React from 'react';
 import '../assets/styles/components/Header.scss';
-
+import { Link } from 'react-router-dom';
 import favLogo from '../assets/static/imgs/favLogo.svg';
 import cartLogo from '../assets/static/imgs/cartLogo.svg';
 import profileLogo from '../assets/static/imgs/profileLogo.svg';
@@ -8,23 +8,24 @@ import profileLogo from '../assets/static/imgs/profileLogo.svg';
 const Header = () => (
   <header className='header__container'>
     <div className='header__subcontainer'>
-      <a className='header__logo logo' href='/'>PC Store</a>
-
+      <Link to='/' className='header__logo logo'>
+        PC Store
+      </Link>
       <span className='header__search'>
         <input className='header__input' type='text' name='search' placeholder='Search here' />
         <img className='header__button--lupa' src='https://image.flaticon.com/icons/svg/49/49116.svg' alt='search icon' />
       </span>
 
       <ul className='header__button'>
-        <a className='header__button--fav' href='#favoritos'>
-          <img src={favLogo} alt='favourite items' />
-        </a>
-        <a className='header__button--cart' id='cartOpenButton' href='#favoritos'>
-          <img src={cartLogo} alt='items in my cart' />
-        </a>
-        <a className='header__button--profile' href='/login'>
-          <img src={profileLogo} alt='customer profile' />
-        </a>
+        <Link to='/favoritos'>
+          <img src={favLogo} className='header__button--fav' alt='favourite items' />
+        </Link>
+        <Link to='/cart'>
+          <img src={cartLogo} id='cartOpenButton' className='header__button--cart' alt='items in my cart' />
+        </Link>
+        <Link to='/login'>
+          <img src={profileLogo} className='header__button--profile' alt='customer profile' />
+        </Link>
       </ul>
     </div>
   </header>
