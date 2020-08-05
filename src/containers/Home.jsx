@@ -6,7 +6,7 @@ import Footer from '../components/Footer';
 import Carousels from '../components/Carousels';
 import '../assets/styles/App.scss';
 
-const App = () => (
+const Home = () => (
   <div className='App'>
     <Header />
     <Filters />
@@ -16,4 +16,4 @@ const App = () => (
   </div>
 );
 
-export default App;
+export default Home;

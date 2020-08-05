@@ -8,7 +8,7 @@ import profileLogo from '../assets/static/imgs/profileLogo.svg';
 const Header = () => (
   <header className='header__container'>
     <div className='header__subcontainer'>
-      <a className='header__logo logo' href='index.html'>PC Store</a>
+      <a className='header__logo logo' href='/'>PC Store</a>
 
       <span className='header__search'>
         <input className='header__input' type='text' name='search' placeholder='Search here' />
@@ -22,7 +22,7 @@ const Header = () => (
         <a className='header__button--cart' id='cartOpenButton' href='#favoritos'>
           <img src={cartLogo} alt='items in my cart' />
         </a>
-        <a className='header__button--profile' href='log-in.html'>
+        <a className='header__button--profile' href='/login'>
           <img src={profileLogo} alt='customer profile' />
         </a>
       </ul>
