@@ -1,36 +1,58 @@
+/* eslint-disable react/jsx-wrap-multilines */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable arrow-parens */
 import React from 'react';
+import { connect } from 'react-redux';
 import Filters from '../components/Filters';
 import Heros from '../components/Heros';
 import Categories from '../components/Categories';
 import CarouselItem from '../components/CarouselItem';
 import Carousel from '../components/Carousel';
-import useInitialState from '../hooks/useInitialState';
 import '../assets/styles/App.scss';
 
-const API = 'http://localhost:3000/initialState';
-const Home = () => {
-  const initialState = useInitialState(API);
+const Home = ({ myfav, boards, cpus, gpus, memory, powerSupply }) => {
   return (
     <>
       <Filters />
       <Heros />
       <Carousel>
+        {myfav.length > 0 &&
+        <Categories title='My Favourites'>
+          {myfav.map((item) => <CarouselItem
+            key={item.id}
+            {...item}
+            isList
+          />)}
+        </Categories>}
         <Categories title='MotherBoards'>
-          {initialState.boards.map((item) => <CarouselItem key={item.id} {...item} />)}
+          {boards.map((item) => <CarouselItem key={item.id} {...item} />)}
         </Categories>
         <Categories title='Processors'>
-          {initialState.cpus.map((item) => <CarouselItem key={item.id} {...item} />)}
+          {cpus.map((item) => <CarouselItem key={item.id} {...item} />)}
         </Categories>
         <Categories title='Graphic Card'>
-          {initialState.gpus.map((item) => <CarouselItem key={item.id} {...item} />)}
+          {gpus.map((item) => <CarouselItem key={item.id} {...item} />)}
         </Categories>
         <Categories title='RAM'>
-          {initialState.memory.map((item) => <CarouselItem key={item.id} {...item} />)}
+          {memory.map((item) => <CarouselItem key={item.id} {...item} />)}
+        </Categories>
+        <Categories title='Power Suplay'>
+          {powerSupply.map((item) => <CarouselItem key={item.id} {...item} />)}
         </Categories>
       </Carousel>
     </>
   );
 };
-export default Home;
+
+const mapStateToProps = state => {
+  return {
+    myfav: state.myfav,
+    boards: state.boards,
+    cpus: state.cpus,
+    gpus: state.gpus,
+    memory: state.memory,
+    powerSupply: state.powerSupply,
+  };
+};
+
+export default connect(mapStateToProps, null)(Home);
