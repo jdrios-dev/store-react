@@ -1,10 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import { Provider } from 'react-redux';
-import { createStore } from 'redux';
-import App from './routes/App';
-import reducer from './reducers/cartReducer';
-//import store from './store';
+/* eslint-disable comma-dangle */
+import { createStore, applyMiddleware } from 'redux';
+import { composeWithDevTools } from 'redux-devtools-extension';
+import thunk from 'redux-thunk';
+import rootReducer from './reducers';
 
 const initialState = {
   'user': {},
@@ -187,11 +185,12 @@ const initialState = {
   ],
 };
 
-const store = createStore(reducer, initialState);
+const middleware = [thunk];
 
-ReactDOM.render(
-  <Provider store={store}>
-    <App />
-  </Provider>,
-  document.getElementById('app'),
+const store = createStore(
+  rootReducer,
+  initialState,
+  composeWithDevTools(applyMiddleware(...middleware))
 );
+
+export default store;

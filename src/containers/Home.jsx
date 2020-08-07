@@ -11,19 +11,20 @@ import Carousel from '../components/Carousel';
 import '../assets/styles/App.scss';
 
 const Home = ({ myfav, boards, cpus, gpus, memory, powerSupply }) => {
+
   return (
     <>
       <Filters />
       <Heros />
       <Carousel>
         {myfav.length > 0 &&
-        <Categories title='My Favourites'>
-          {myfav.map((item) => <CarouselItem
-            key={item.id}
-            {...item}
-            isList
-          />)}
-        </Categories>}
+          <Categories title='My Favourites'>
+            {myfav.map((item) => <CarouselItem
+              key={item.id}
+              {...item}
+              isList
+            />)}
+          </Categories>}
         <Categories title='MotherBoards'>
           {boards.map((item) => <CarouselItem key={item.id} {...item} />)}
         </Categories>

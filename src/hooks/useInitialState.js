@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
 
 const useInitialState = (API) => {
-  const [products, setItems] = useState({
+  const [products, setProducts] = useState({
+    myCart: [],
     myfav: [],
     boards: [],
     cpus: [],
@@ -11,7 +12,7 @@ const useInitialState = (API) => {
   useEffect(() => {
     fetch(API)
       .then((response) => response.json())
-      .then((data) => setItems(data));
+      .then((data) => setProducts(data));
   }, []);
   return products;
 };

@@ -1,0 +1,5 @@
+ //si sirve
+  useEffect(() => {
+    localStorage.setItem('prueba', JSON.stringify(myfav));
+    setTaskItems(tasktItems, ...storge);
+  }, [myfav]);

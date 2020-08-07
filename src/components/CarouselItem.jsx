@@ -1,13 +1,13 @@
-/* eslint-disable import/named */
 import React from 'react';
 import { connect } from 'react-redux';
-import { setFavorite, deleteFavorite } from '../actions/index';
+import { setFavorite, deleteFavorite, addCart } from '../actions/addAction';
 import favLogo from '../assets/static/imgs/favLogo.svg';
 import cartLogo from '../assets/static/imgs/cartLogo.svg';
 import quitLogo from '../assets/static/imgs/quitLogo.svg';
 import '../assets/styles/components/Carousel.scss';
 
 const CarouselItem = (props) => {
+  const { addCart } = props;
   const { id, priceUs, priceCop, model, image, description, isList } = props;
   const handleSetFavorite = () => {
     props.setFavorite({
@@ -32,18 +32,18 @@ const CarouselItem = (props) => {
       <p className='galery__item--price'>{`$ ${priceUs}`}</p>
       <div className='galery__item--details'>
         {
-          isList
-            ? <img src={quitLogo} alt='remove from favorites items' onClick={() => handleDeleteFavorite(id)} />
-            : <img src={favLogo} alt='Add to favorites items' onClick={handleSetFavorite} />
+          isList ? <img src={quitLogo} alt='remove from favorites items' onClick={() => handleDeleteFavorite(id)} /> : <img src={favLogo} alt='Add to favorites items' onClick={handleSetFavorite} />
         }
-        <img src={cartLogo} alt='Add to favorites cart' />
+        <img src={cartLogo} alt='Add to favorites cart' onClick={addCart} />
       </div>
     </div>
   );
 };
+
 const mapDispatchToProps = {
   setFavorite,
   deleteFavorite,
+  addCart,
 };
 
 export default connect(null, mapDispatchToProps)(CarouselItem);
